@@ -1,0 +1,8 @@
+
+converge_on_client:
+  build: ../chef-local
+  volumes:
+    - ./chef:/chef
+  command:
+    - "-N"
+    - "test01"

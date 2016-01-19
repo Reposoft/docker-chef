@@ -1,0 +1,6 @@
+{
+  "name": "test01",
+	"run_list": [
+		"recipe[echo]"
+	]
+}
