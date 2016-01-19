@@ -6,13 +6,19 @@ All of the below are just drafts, and perhaps not even found at https://hub.dock
 
 A lightweight insecure chef server, mount your chef structure at... TBD
 
+```
+docker run -t solsson/chef-zero
+```
+
 ## chef-client
 
 Chef-client, mount your config at /etc/chef
 
 ## chef-local
 
-Actually chef-client -z (local mode), mouth your chef structure at... TBD
+chef-client -z (local mode), mount your chef structure at... TBD
+
+We're using this instead of chef-solo due to compatibility with regular node files.
 
 ## chef-apply
 

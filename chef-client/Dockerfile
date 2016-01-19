@@ -1,4 +1,4 @@
 
 FROM solsson/chef-base
 
-ENTRYPOINT /opt/chef/embedded/bin/chef-client
+ENTRYPOINT /opt/chef/bin/chef-client
