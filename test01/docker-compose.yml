@@ -6,3 +6,29 @@ converge_on_client:
   command:
     - "-N"
     - "test01"
+
+chef_apply:
+  build: ../chef-local
+  volumes:
+    - ./sample-apply:/scripts
+  command:
+    - "/scripts/converge1.rb"
+    - "/scripts/converge2.rb"
+
+# TODO for chef_zero + client it remains to figure out how to handle/disable keys
+chef_zero:
+  build: ../chef-zero
+  tty: true
+  volumes:
+    - ./chef:/chef
+  command:
+    - "--generate-keys"
+converge_using_zero:
+  build: ../chef-client
+  links:
+    - chef_zero:chefserver
+  volumes:
+    - ./etc-client-zero/:/etc/chef
+  command:
+    - "-N"
+    - "test01"
